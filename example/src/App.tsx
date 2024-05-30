@@ -1,21 +1,20 @@
 import React, { useCallback, useEffect, useState } from 'react';
-
+import debounce from 'lodash/debounce';
 import {
-  StyleSheet,
-  View,
-  Text,
   FlatList,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import {
   ZebraEvent,
   ZebraEventEmitter,
-  getAllDevices,
   connectToDevice,
+  getAllDevices,
   type ZebraResultPayload,
   type ZebraRfidResultPayload,
 } from 'react-native-zebra-rfid-barcode';
-import debounce from 'lodash/debounce';
 
 export default function App() {
   const [listDevices, setListDevices] = useState<string[]>([]);
