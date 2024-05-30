@@ -37,7 +37,17 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "RFID",
+    "barcode",
+    "scanner",
+    "Zebra",
+    "react-native-zebra",
+    "react-native-rfid",
+    "react-native-barcode",
+    "RFID reader",
+    "barcode scanner",
+    "native module"
   ],
   "repository": {
     "type": "git",
