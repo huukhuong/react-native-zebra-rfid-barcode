@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import {
   StyleSheet,
@@ -15,6 +15,7 @@ import {
   type ZebraResultPayload,
   type ZebraRfidResultPayload,
 } from 'react-native-zebra-rfid-barcode';
+import debounce from 'lodash/debounce';
 
 export default function App() {
   const [listDevices, setListDevices] = useState<string[]>([]);
@@ -27,14 +28,14 @@ export default function App() {
     const barcodeEvent = ZebraEventEmitter.addListener(
       ZebraEvent.ON_BARCODE,
       (e: ZebraResultPayload) => {
-        setListBarcodes([...listBarcodes, e.data]);
+        handleBarcodeEvent(e.data);
       }
     );
 
     const rfidEvent = ZebraEventEmitter.addListener(
       ZebraEvent.ON_RFID,
       (e: ZebraRfidResultPayload) => {
-        setListRfid([...listRfid, ...e.data]);
+        handleRfidEvent(e.data);
       }
     );
 
@@ -52,6 +53,20 @@ export default function App() {
     };
   }, []);
 
+  const handleRfidEvent = useCallback(
+    debounce((newData: string[]) => {
+      setListRfid((pre) => [...pre, ...newData]);
+    }, 200),
+    []
+  );
+
+  const handleBarcodeEvent = useCallback(
+    debounce((newData: string) => {
+      setListBarcodes((pre) => [...pre, newData]);
+    }, 200),
+    []
+  );
+
   const getListRfidDevices = async () => {
     const listDevices = await getAllDevices();
     setListDevices(listDevices);
@@ -64,7 +79,9 @@ export default function App() {
           maxHeight: 200,
         }}
       >
-        <Text style={[styles.text, styles.title]}>Devices:</Text>
+        <Text style={[styles.text, styles.title]}>
+          Devices: {listDevices.length}
+        </Text>
         <FlatList
           style={{ backgroundColor: '#FEF3C7' }}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -81,7 +98,9 @@ export default function App() {
       </View>
 
       <View style={styles.partial}>
-        <Text style={[styles.text, styles.title]}>Barcodes:</Text>
+        <Text style={[styles.text, styles.title]}>
+          Barcodes: {listBarcodes.length}
+        </Text>
         <FlatList
           style={{ backgroundColor: '#DCFCE7' }}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -95,7 +114,9 @@ export default function App() {
       </View>
 
       <View style={styles.partial}>
-        <Text style={[styles.text, styles.title]}>RFIDs:</Text>
+        <Text style={[styles.text, styles.title]}>
+          RFIDs: {listRfid.length}
+        </Text>
         <FlatList
           style={{ backgroundColor: '#E0F2FE', marginBottom: 10 }}
           ItemSeparatorComponent={() => <View style={styles.separator} />}

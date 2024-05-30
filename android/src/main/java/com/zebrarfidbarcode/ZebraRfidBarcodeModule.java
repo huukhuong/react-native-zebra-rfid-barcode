@@ -133,4 +133,12 @@ public class ZebraRfidBarcodeModule extends ReactContextBaseJavaModule implement
   private void sendEvent(ReactContext reactContext, String eventName, @Nullable WritableMap params) {
     reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
   }
+
+  @ReactMethod
+  public void addListener(String eventName) {
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+  }
 }

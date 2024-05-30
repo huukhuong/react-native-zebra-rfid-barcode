@@ -10,6 +10,7 @@
     "build:ios": "cd ios && xcodebuild -workspace ZebraRfidBarcodeExample.xcworkspace -scheme ZebraRfidBarcodeExample -configuration Debug -sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-native": "0.74.1"
   },
@@ -20,6 +21,7 @@
     "@react-native/babel-preset": "0.74.83",
     "@react-native/metro-config": "0.74.83",
     "@react-native/typescript-config": "0.74.83",
+    "@types/lodash": "^4.17.4",
     "babel-plugin-module-resolver": "^5.0.0"
   },
   "engines": {
