@@ -1,4 +1,4 @@
-package com.citek.maison.scanner.barcode;
+package com.zebrarfidbarcode.barcode;
 
 public interface IBarcodeScannedListener {
     void onBarcodeScanned(String barcode);

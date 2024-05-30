@@ -1,4 +1,4 @@
-package com.citek.maison.scanner.barcode;
+package com.zebrarfidbarcode.barcode;
 
 import android.content.Context;
 

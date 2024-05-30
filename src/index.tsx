@@ -1,4 +1,4 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
   `The package 'react-native-zebra-rfid-barcode' doesn't seem to be linked. Make sure: \n\n` +
@@ -17,6 +17,25 @@ const ZebraRfidBarcode = NativeModules.ZebraRfidBarcode
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ZebraRfidBarcode.multiply(a, b);
+export const getAllDevices = async (): Promise<string[]> => {
+  return await ZebraRfidBarcode.getAllDevices();
+};
+
+export const connectToDevice = (deviceName: string) => {
+  return ZebraRfidBarcode.connectToDevice(deviceName);
+};
+
+export interface ZebraResultPayload {
+  data: string;
+}
+export interface ZebraRfidResultPayload {
+  data: string[];
+}
+
+export const ZebraEventEmitter = new NativeEventEmitter(ZebraRfidBarcode);
+
+export enum ZebraEvent {
+  ON_DEVICE_CONNECTED = 'onZebraDeviceConnected',
+  ON_RFID = 'onZebraRFIDReaded',
+  ON_BARCODE = 'onZebraBarcodeScanned',
 }
