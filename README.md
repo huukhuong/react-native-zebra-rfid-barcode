@@ -3,7 +3,7 @@
 This React Native module enables seamless integration with Zebra RFID readers and barcode scanners.
 
 ## Demo
-[![Watch the video](./ezgif-frame-001.png)](./demo.mp4)
+https://github.com/huukhuong/react-native-zebra-rfid-barcode/assets/78204178/a54c4616-76ce-48da-86cb-6ceaab1beeef
 
 ## Installation
 
