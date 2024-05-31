@@ -1,6 +1,6 @@
 {
   "name": "react-native-zebra-rfid-barcode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This React Native module enables seamless integration with Zebra RFID readers and barcode scanners.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
