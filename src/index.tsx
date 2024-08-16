@@ -35,7 +35,7 @@ export interface ZebraRfidResultPayload {
 export const ZebraEventEmitter = new NativeEventEmitter(ZebraRfidBarcode);
 
 export enum ZebraEvent {
-  ON_DEVICE_CONNECTED = 'onZebraDeviceConnected',
+  ON_DEVICE_CONNECTED = 'onZebraConnected',
   ON_RFID = 'onZebraRFIDReaded',
   ON_BARCODE = 'onZebraBarcodeScanned',
 }
