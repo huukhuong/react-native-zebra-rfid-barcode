@@ -1,5 +1,5 @@
 {
-  "name": "react-native-zebra-rfid-barcode",
+  "name": "react-native-zebra-rfid-barcode-ef-tech",
   "version": "0.1.1",
   "description": "This React Native module enables seamless integration with Zebra RFID readers and barcode scanners.",
   "main": "lib/commonjs/index",
@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-zebra-rfid-barcode-example",
+    "example": "yarn workspace react-native-zebra-rfid-barcode-ef-tech-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -51,14 +51,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huukhuong/react-native-zebra-rfid-barcode.git"
+    "url": "git+https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech.git"
   },
-  "author": "huukhuong <huukhuong.it@gmail.com> (https://github.com/huukhuong)",
+  "author": "efernandes-tech <efernandes-tech@gmail.com> (https://github.com/efernandes-tech)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/huukhuong/react-native-zebra-rfid-barcode/issues"
+    "url": "https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech/issues"
   },
-  "homepage": "https://github.com/huukhuong/react-native-zebra-rfid-barcode#readme",
+  "homepage": "https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
