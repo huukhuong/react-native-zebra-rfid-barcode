@@ -4,7 +4,7 @@ This React Native module enables seamless integration with Zebra RFID readers an
 
 ## Demo
 
-https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech/assets/78204178/a54c4616-76ce-48da-86cb-6ceaab1beeef
+https://github.com/huukhuong/react-native-zebra-rfid-barcode/assets/78204178/a54c4616-76ce-48da-86cb-6ceaab1beeef
 
 ## Installation
 
@@ -13,10 +13,51 @@ npm install react-native-zebra-rfid-barcode-ef-tech
 yarn add react-native-zebra-rfid-barcode-ef-tech
 ```
 
-## Linking
+## Bluetooth Permissions (Android >= 13)
+In AndroidManifest.xml
+```xml
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+```
+In MainActivity
+```kotlin
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
-```sh
-yarn android
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+    requestBluetoothPermissions();
+  }
+}
+
+@RequiresApi(Build.VERSION_CODES.S)
+private fun requestBluetoothPermissions() {
+  val permissions = arrayOf(
+    Manifest.permission.BLUETOOTH_CONNECT,
+    Manifest.permission.BLUETOOTH_SCAN,
+    Manifest.permission.BLUETOOTH_ADVERTISE
+  )
+
+  val permissionToRequest = permissions.filter {
+    ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+  }
+
+  if (permissionToRequest.isNotEmpty()) {
+    ActivityCompat.requestPermissions(
+      this,
+      permissionToRequest.toTypedArray(),
+      1
+    )
+  }
+}
 ```
 
 ## Import
