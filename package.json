@@ -51,14 +51,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech.git"
+    "url": "git+https://github.com/huukhuong/react-native-zebra-rfid-barcode.git"
   },
-  "author": "efernandes-tech <efernandes-tech@gmail.com> (https://github.com/efernandes-tech)",
+  "author": "huukhuong <huukhuong.it@gmail.com> (https://github.com/huukhuong)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech/issues"
+    "url": "https://github.com/huukhuong/react-native-zebra-rfid-barcode/issues"
   },
-  "homepage": "https://github.com/efernandes-tech/react-native-zebra-rfid-barcode-ef-tech#readme",
+  "homepage": "https://github.com/huukhuong/react-native-zebra-rfid-barcode#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
