@@ -14,7 +14,7 @@ import {
   getAllDevices,
   type ZebraResultPayload,
   type ZebraRfidResultPayload,
-} from 'react-native-zebra-rfid-barcode-ef-tech';
+} from 'react-native-zebra-rfid-barcode';
 
 export default function App() {
   const [listDevices, setListDevices] = useState<string[]>([]);

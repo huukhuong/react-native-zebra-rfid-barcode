@@ -1,4 +1,4 @@
-# react-native-zebra-rfid-barcode-ef-tech
+# react-native-zebra-rfid-barcode
 
 This React Native module enables seamless integration with Zebra RFID readers and barcode scanners.
 
@@ -9,8 +9,8 @@ https://github.com/huukhuong/react-native-zebra-rfid-barcode/assets/78204178/a54
 ## Installation
 
 ```sh
-npm install react-native-zebra-rfid-barcode-ef-tech
-yarn add react-native-zebra-rfid-barcode-ef-tech
+npm install react-native-zebra-rfid-barcode
+yarn add react-native-zebra-rfid-barcode
 ```
 
 ## Bluetooth Permissions (Android >= 13)
@@ -70,7 +70,7 @@ import {
   connectToDevice,
   type ZebraResultPayload,
   type ZebraRfidResultPayload,
-} from 'react-native-zebra-rfid-barcode-ef-tech';
+} from 'react-native-zebra-rfid-barcode';
 
 // ...
 ```
@@ -172,7 +172,7 @@ import {
   getAllDevices,
   type ZebraResultPayload,
   type ZebraRfidResultPayload,
-} from 'react-native-zebra-rfid-barcode-ef-tech';
+} from 'react-native-zebra-rfid-barcode';
 
 export default function App() {
   const [listDevices, setListDevices] = useState<string[]>([]);

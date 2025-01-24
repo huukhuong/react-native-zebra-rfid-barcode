@@ -1,7 +1,7 @@
 import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
-  `The package 'react-native-zebra-rfid-barcode-ef-tech' doesn't seem to be linked. Make sure: \n\n` +
+  `The package 'react-native-zebra-rfid-barcode' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';

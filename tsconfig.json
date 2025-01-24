@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-zebra-rfid-barcode-ef-tech": ["./src/index"]
+      "react-native-zebra-rfid-barcode": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
